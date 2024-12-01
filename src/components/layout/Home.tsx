@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import HeroSection from "./HeroSection";
 import Resume from "./Resume";
+import Work from "./Work";
 
 // Home Page Content Component
 const HomeContent = () => {
@@ -39,7 +40,7 @@ export default function Home() {
             <HomeContent />
           </TabsContent>
           <TabsContent value="resume" className="w-full"><Resume /></TabsContent>
-          <TabsContent value="work">Work</TabsContent>
+          <TabsContent value="work"><Work /></TabsContent>
           <TabsContent value="blogs">Blogs</TabsContent>
           <TabsContent value="contact">Contact</TabsContent>
         </div>

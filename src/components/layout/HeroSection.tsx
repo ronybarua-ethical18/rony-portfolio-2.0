@@ -64,7 +64,7 @@ function HeroSection() {
           <h2 className="text-[#fe0f5d] font-medium text-xl">Hi, my name is</h2>
           <h1 className="font-bold text-6xl">Rony Barua</h1>
           <h3 className="font-normal text-gray-500 text-3xl my-6">
-            Full Stack Engineer with 3 years+ Experience
+          Backend-Focused Full-Stack Engineer with Over 3 Years of Experience
           </h3>
           <p className="text-gray-300 leading-relaxed">
             I'm an experienced Full Stack JavaScript Developer with a strong
