@@ -8,8 +8,9 @@ import Resume from "./Resume";
 import {  SpotlightNewDemo } from "../ui/spotlight";
 // import Work from "./Work";
 import Contact from "./Contact";
-import { AnimatedTestimonialsDemo } from "./Work";
+// import { AnimatedTestimonialsDemo } from "./Work";
 import { Button } from "../ui/button";
+import { StickyScrollRevealDemo } from "./Work";
 
 // Type definitions
 interface TabItem {
@@ -66,7 +67,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex justify-evenly items-start min-h-[calc(100vh-40px)] text-white relative">
+    <div className="min-h-[calc(100vh-40px)] text-white relative">
       <SpotlightNewDemo
       />
       <motion.h1
@@ -128,7 +129,7 @@ export default function Home() {
               {selectedTab === "work" && (
                 <AnimatePresence mode="wait">
                   <AnimatedContent>
-                    <AnimatedTestimonialsDemo />
+                    <StickyScrollRevealDemo />
                   </AnimatedContent>
                 </AnimatePresence>
               )}

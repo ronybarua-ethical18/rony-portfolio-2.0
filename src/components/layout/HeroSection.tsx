@@ -106,10 +106,10 @@ function HeroSection() {
               <Image
                 src={ProfileImg}
                 alt="Profile"
-                width={430}
+                width={420}
                 priority
                 quality={100}
-                height={430}
+                height={420}
                 className="object-cover mb-4"
               />
 
@@ -119,7 +119,7 @@ function HeroSection() {
 
             {/* Rotating Circle Effect */}
             <motion.svg
-              className="absolute w-[480px] h-[480px] z-50"
+              className="absolute w-[470px] h-[470px] z-50"
               fill="transparent"
               viewBox="0 0 506 506"
               xmlnsXlink="http://www.w3.org/2000/svg"
