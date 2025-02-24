@@ -17,18 +17,23 @@ interface ContactData {
   message: string;
 }
 
-const ContactInfo: React.FC<ContactInfoProps> = ({ icon: Icon, title, content, link }) => (
+const ContactInfo: React.FC<ContactInfoProps> = ({
+  icon: Icon,
+  title,
+  content,
+  link,
+}) => (
   <div className="flex space-x-6 mb-10">
-    <div className="bg-gray-900 flex items-center justify-center w-16 h-16">
+    <div className="bg-white/5 backdrop-blur-lg flex items-center justify-center w-16 h-16 rounded-lg">
       <Icon className="text-[#fe0f5d] text-base" />
     </div>
     <div>
       <h2 className="text-gray-500">{title}</h2>
       {link ? (
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hover:text-[#fe0f5d] transition-colors"
         >
           {content}
@@ -40,4 +45,4 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ icon: Icon, title, content, l
   </div>
 );
 
-export default ContactInfo
+export default ContactInfo;

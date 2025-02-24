@@ -5,12 +5,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroSection from "./HeroSection";
 import Resume from "./Resume";
-import {  SpotlightNewDemo } from "../ui/spotlight";
+import { SpotlightNewDemo } from "../ui/spotlight";
 // import Work from "./Work";
 import Contact from "./Contact";
 // import { AnimatedTestimonialsDemo } from "./Work";
 import { Button } from "../ui/button";
 import { StickyScrollRevealDemo } from "./Work";
+import { GlowingEffect } from "../ui/glowing-effect";
 
 // Type definitions
 interface TabItem {
@@ -42,7 +43,11 @@ const pageVariants = {
 };
 
 // Animated wrapper component
-const AnimatedContent = ({ children }: { children: React.ReactNode }) => {
+export const AnimatedContent = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   return (
     <motion.div
       initial="initial"
@@ -68,8 +73,7 @@ export default function Home() {
 
   return (
     <div className="min-h-[calc(100vh-40px)] text-white relative">
-      <SpotlightNewDemo
-      />
+      <SpotlightNewDemo />
       <motion.h1
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -96,7 +100,17 @@ export default function Home() {
           onValueChange={setSelectedTab}
           className="w-full m-0"
         >
+         
           <TabsList className="grid max-w-[500px] grid-cols-4 m-auto bg-white/5 backdrop-blur-sm border border-white/20 shadow-lg rounded-md h-12 place-items-center">
+          <GlowingEffect
+            blur={0}
+            borderWidth={3}
+            spread={80}
+            glow={true}
+            disabled={false}
+            proximity={64}
+            inactiveZone={0.01}
+          />
             {tabItems.map(({ value, label }) => (
               <TabsTrigger key={value} value={value} className="h-9">
                 {label}
@@ -114,7 +128,7 @@ export default function Home() {
                 </AnimatePresence>
               )}
             </TabsContent>
-            
+
             <TabsContent value="resume" className="w-full m-0">
               {selectedTab === "resume" && (
                 <AnimatePresence mode="wait">
@@ -124,7 +138,7 @@ export default function Home() {
                 </AnimatePresence>
               )}
             </TabsContent>
-            
+
             <TabsContent value="work" className="w-full m-0">
               {selectedTab === "work" && (
                 <AnimatePresence mode="wait">
@@ -134,7 +148,7 @@ export default function Home() {
                 </AnimatePresence>
               )}
             </TabsContent>
-            
+
             <TabsContent value="contact" className="w-full m-0">
               {selectedTab === "contact" && (
                 <AnimatePresence mode="wait">
@@ -154,10 +168,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="absolute top-0 right-0"
       >
-        <Button
-          variant="secondary"
-          className="hover:bg-gray-700/50"
-        >
+        <Button variant="secondary" className="hover:bg-gray-700/50">
           Hire me
         </Button>
       </motion.div>

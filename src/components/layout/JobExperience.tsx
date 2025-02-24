@@ -1,5 +1,6 @@
 import React from "react";
 import { SiBmcsoftware } from "react-icons/si";
+import { GlowingEffect } from "../ui/glowing-effect";
 
 function JobExperience() {
   const jobExperiences = [
@@ -35,15 +36,23 @@ function JobExperience() {
       <div className="mt-10 flex space-x-4">
         {jobExperiences.map((item) => (
           <div
-            className="p-8 rounded-md shadow-sm border border-gray-400 w-full hover:border-[#fe0f5d] cursor-default"
+            className="p-8 rounded-md shadow-sm border border-gray-400 w-full cursor-default hover:bg-white/5 hover:backdrop-blur-lg transition-all duration-300 ease-in-out hover:duration-300 hover:ease-in-out
+            relative"
             key={item.id}
           >
-               <SiBmcsoftware className="mb-2 text-xl"/>
+            <GlowingEffect
+              blur={0}
+              borderWidth={3}
+              spread={80}
+              glow={true}
+              disabled={false}
+              proximity={64}
+              inactiveZone={0.01}
+            />
+            <SiBmcsoftware className="mb-2 text-xl" />
             <h2 className="font-medium text-[#fe0f5d]">{item.duration}</h2>
             <h1 className="font-medium text-lg mt-4">{item.title}</h1>
-            <p className="text-gray-500">
-              {item.company}
-            </p>
+            <p className="text-gray-500">{item.company}</p>
             <li className=" mt-6">{item.location}</li>
           </div>
         ))}

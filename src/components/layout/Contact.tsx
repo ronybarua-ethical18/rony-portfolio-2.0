@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
     {
       icon: BsLinkedin,
       title: "LinkedIn",
-      content: "https://www.linkedin.com/in/rony-barua/",
+      content: "https://www.linkedin.com/in/rony-barua",
       link: "https://www.linkedin.com/in/rony-barua/",
     },
     {
@@ -59,13 +59,11 @@ const Contact: React.FC = () => {
         data[key as keyof ContactData] = value;
       }
     });
-
-    console.log("Form submitted:", data);
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  w-full">
-      <div className="w-full shadow-lg bg-[#161b3e] rounded-md p-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  w-[80%] m-auto">
+      <div className="w-full shadow-md hover:bg-[#08082d] bg-white/5 transition-all duration-300 ease-linear backdrop-blur-xl rounded-xl p-8 border border-gray-600">
         <h1 className="text-4xl text-white font-semibold">
           Let's work together
         </h1>
@@ -79,13 +77,13 @@ const Contact: React.FC = () => {
               type="text"
               name="firstName"
               placeholder="First name"
-              className="bg-gray-900 border-none h-12"
+              className="bg-gray-600 border-none h-12"
             />
             <Input
               type="text"
               name="lastName"
               placeholder="Last name"
-              className="bg-gray-900 border-none h-12"
+              className="bg-gray-600 border-none h-12"
             />
           </div>
 
@@ -94,20 +92,20 @@ const Contact: React.FC = () => {
               type="email"
               name="email"
               placeholder="Email address"
-              className="bg-gray-900 border-none h-12"
+              className="bg-gray-600 border-none h-12"
             />
             <Input
               type="tel"
               name="phone"
               placeholder="Phone"
-              className="bg-gray-900 border-none h-12"
+              className="bg-gray-600 border-none h-12"
             />
           </div>
 
           <Textarea
             name="message"
             rows={8}
-            className="mt-8 bg-gray-900"
+            className="mt-8 bg-gray-600 border-none"
             placeholder="Type your message here..."
           />
 
