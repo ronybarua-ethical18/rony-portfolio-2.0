@@ -8,7 +8,7 @@ import CountUp from "react-countup";
 import Image from "next/image";
 import ProfileImg from "../../../public/rony.png";
 import { Button } from "../ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function HeroSection() {
   // Extracted Social Icons Component
@@ -60,19 +60,17 @@ function HeroSection() {
   );
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 ">
         <div className="text-left">
           <h2 className="text-[#fe0f5d] font-medium text-xl">Hi, my name is</h2>
-          <h1 className="font-bold text-6xl">Rony Barua</h1>
-          <h3 className="font-normal text-gray-500 text-3xl my-6">
+          <h1 className="font-bold text-6xl sixteen-hundred:text-5xl">Rony Barua</h1>
+          <h3 className="font-normal text-gray-500 text-3xl my-6 sixteen-hundred:text-2xl">
             Backend-Focused Full-Stack Engineer with Over 3 Years of Experience
           </h3>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed text-lg sixteen-hundred:text-base">
             I'm an experienced Full Stack JavaScript Developer with a strong
             background in both frontend and backend development, specializing in
-            creating high-performance, scalable applications. Currently, I'm
-            leading the development of a Shopify Dropshipping app, focusing on
-            efficient parcel tracking and management solutions.
+            creating high-performance, scalable applications. 
           </p>
           <div className="flex space-x-8 items-center mt-8">
             <Button
@@ -110,7 +108,7 @@ function HeroSection() {
                 priority
                 quality={100}
                 height={420}
-                className="object-cover mb-4"
+                className="object-cover sixteen-hundred:w-[350px] sixteen-hundred:h-[350px]"
               />
 
               {/* Bottom Shadow to Hide Part of Image */}
@@ -119,7 +117,7 @@ function HeroSection() {
 
             {/* Rotating Circle Effect */}
             <motion.svg
-              className="absolute w-[470px] h-[470px] z-50"
+              className="absolute w-[470px] h-[470px] sixteen-hundred:w-[430px] sixteen-hundred:h-[430px] z-50"
               fill="transparent"
               viewBox="0 0 506 506"
               xmlnsXlink="http://www.w3.org/2000/svg"
@@ -154,7 +152,7 @@ function HeroSection() {
           </motion.div>
         </div>
       </div>
-      <div className="flex items-center mt-8">
+      <div className="flex items-center mt-8 sixteen-hundred:mt-0">
         {statsData.map((stat, index) => (
           <Stats
             key={index}

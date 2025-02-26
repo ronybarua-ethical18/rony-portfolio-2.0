@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  w-[80%] m-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  w-[80%] m-auto sixteen-hundred:w-[90%]">
       <div className="w-full shadow-md hover:bg-[#08082d] bg-white/5 transition-all duration-300 ease-linear backdrop-blur-xl rounded-xl p-8 border border-gray-600">
         <h1 className="text-4xl text-white font-semibold">
           Let's work together
@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
           <Textarea
             name="message"
             rows={8}
-            className="mt-8 bg-gray-600 border-none"
+            className="mt-8 bg-gray-600 border-none sixteen-hundred:h-28"
             placeholder="Type your message here..."
           />
 

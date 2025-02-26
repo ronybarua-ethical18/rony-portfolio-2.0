@@ -118,7 +118,7 @@ export default function Home() {
             ))}
           </TabsList>
 
-          <div className="min-h-[calc(100vh-212px)] flex justify-center mt-28">
+          <div className="min-h-[calc(100vh-212px)] flex justify-center mt-28 sixteen-hundred:mt-20">
             <TabsContent value="home" className="text-left w-full m-0">
               {selectedTab === "home" && (
                 <AnimatePresence mode="wait">

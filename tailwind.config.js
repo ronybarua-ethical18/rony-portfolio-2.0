@@ -1,6 +1,5 @@
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+import animatePlugin from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,6 +14,9 @@ module.exports = {
   ],
   theme: {
   	extend: {
+  		screens: {
+  			'sixteen-hundred': {'max': '1600px'},
+  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -78,7 +80,7 @@ module.exports = {
 		  },
   	}
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors],
+  plugins: [animatePlugin, addVariablesForColors],
 }
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${kurale.className} w-[95%] sm:w-[90%] md:w-[85%] lg:w-[70%] mx-auto pt-10 max-w-[1500px] overflow-hidden`}
+        className={`${kurale.className} sixteen-hundred:w-[85%] w-[95%] sm:w-[90%] lg:w-[70%] mx-auto pt-10 max-w-[1500px] overflow-hidden`}
         suppressHydrationWarning
       >
         {children}
