@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroSection from "./HeroSection";
@@ -12,6 +12,7 @@ import Contact from "./Contact";
 import { Button } from "../ui/button";
 import { Work } from "./Work";
 import { GlowingEffect } from "../ui/glowing-effect";
+import Loader from "../ui/loader";
 
 // Type definitions
 interface TabItem {
@@ -63,6 +64,15 @@ export const AnimatedContent = ({
 // Main Home Component
 export default function Home() {
   const [selectedTab, setSelectedTab] = useState("home");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <Loader />
+  }
 
   const tabItems: TabItem[] = [
     { value: "home", label: "Home" },
@@ -72,7 +82,12 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-[calc(100vh-40px)] text-white relative">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-[calc(100vh-40px)] text-white relative"
+    >
       <SpotlightNewDemo />
       <motion.h1
         initial={{ opacity: 0, x: -20 }}
@@ -172,6 +187,6 @@ export default function Home() {
           Hire me
         </Button>
       </motion.div>
-    </div>
+    </motion.div>
   );
 }
