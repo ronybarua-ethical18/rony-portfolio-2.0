@@ -17,7 +17,7 @@ function Skills() {
             <h2 className="text-lg font-semibold mb-4 text-gray-300 border-b border-gray-600 pb-2">
               {category.title}
             </h2>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-3 custom-lg:grid-cols-4 super-sm:grid-cols-2 gap-4">
               {category.skillSet.map((skill) => (
                 <div
                   key={skill.id}
@@ -31,7 +31,7 @@ function Skills() {
                     className="w-6 h-6 
                       text-white 
                       group-hover:text-black 
-                      transition duration-300 ease-in-out"
+                      transition duration-300 ease-in-out "
                   />
                   <span
                     className="

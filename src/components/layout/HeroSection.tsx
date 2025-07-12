@@ -20,7 +20,7 @@ function HeroSection() {
     ];
 
     return (
-      <div className="flex space-x-6">
+      <div className="flex space-x-4">
         {socialLinks.map(({ Icon, href }, index) => (
           <Link
             key={index}
@@ -60,7 +60,7 @@ function HeroSection() {
   );
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4 ">
+      <div className="grid grid-cols-1 custom-lg:grid-cols-2 gap-4 ">
         <div className="text-left">
           <h2 className="text-[#fe0f5d] font-medium text-xl">Hi, my name is</h2>
           <h1 className="font-bold text-6xl sixteen-hundred:text-5xl">Rony Barua</h1>
@@ -72,7 +72,7 @@ function HeroSection() {
             background in both frontend and backend development, specializing in
             creating high-performance, scalable applications. 
           </p>
-          <div className="flex space-x-8 items-center mt-8">
+          <div className="flex space-x-6 items-center mt-8">
             <Button
               variant="outline"
               className="bg-transparent rounded-xl border-[#fe0f5d] text-white flex items-center gap-2 hover:bg-[#fe0f5d] hover:text-white"
@@ -83,7 +83,22 @@ function HeroSection() {
             <SocialIcons />
           </div>
         </div>
-        <div className="flex items-center justify-end">
+        
+        {/* Stats Section - Between text and image on small screens */}
+        <div className="custom-lg:hidden flex flex-col custom-sm:flex-row items-center mt-8 sixteen-hundred:mt-8">
+          <div className="grid grid-cols-2 gap-4 w-full custom-sm:w-auto custom-sm:flex">
+            {statsData.map((stat, index) => (
+              <Stats
+                key={index}
+                end={stat.end}
+                label={stat.label}
+                isFirst={index === 0}
+              />
+            ))}
+          </div>
+        </div>
+        
+        <div className="hidden custom-lg:flex items-center justify-center lg:justify-end">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{
@@ -152,7 +167,9 @@ function HeroSection() {
           </motion.div>
         </div>
       </div>
-      <div className="flex items-center mt-8 sixteen-hundred:mt-0">
+      
+      {/* Stats Section - Only visible on large screens */}
+      <div className="hidden custom-lg:flex items-center mt-8 sixteen-hundred:mt-0">
         {statsData.map((stat, index) => (
           <Stats
             key={index}

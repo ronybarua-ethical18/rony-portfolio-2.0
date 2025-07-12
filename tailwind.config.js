@@ -16,6 +16,12 @@ module.exports = {
   	extend: {
   		screens: {
   			'sixteen-hundred': {'max': '1600px'},
+  			'custom-lg': {'min': '1000px'},
+  			'custom-lg-max': {'max': '999px'},
+  			'custom-md': {'min': '850px'},
+  			'custom-sm': {'min': '650px'},
+  			'custom-xl': {'min': '1250px'},
+  			'super-sm': {'max': '549px'}, // 👈 Add this line
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

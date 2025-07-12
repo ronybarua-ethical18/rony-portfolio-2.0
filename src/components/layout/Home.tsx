@@ -78,7 +78,7 @@ export default function Home() {
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-white font-bold text-4xl mt-0 absolute top-0 left-0 flex"
+        className="text-white font-bold text-4xl mt-0 absolute top-0 left-0 flex custom-md:flex hidden"
       >
         Rony
         <motion.div
@@ -118,7 +118,7 @@ export default function Home() {
             ))}
           </TabsList>
 
-          <div className="min-h-[calc(100vh-212px)] flex justify-center mt-28 sixteen-hundred:mt-20">
+          <div className="min-h-[calc(100vh-212px)] flex justify-center mt-28 sixteen-hundred:mt-20 custom-md:mt-14">
             <TabsContent value="home" className="text-left w-full m-0">
               {selectedTab === "home" && (
                 <AnimatePresence mode="wait">
@@ -166,7 +166,7 @@ export default function Home() {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="absolute top-0 right-0"
+        className="absolute top-0 right-0 custom-md:block hidden"
       >
         <Button variant="secondary" className="hover:bg-gray-700/50">
           Hire me

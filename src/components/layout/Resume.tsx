@@ -21,7 +21,7 @@ function Resume() {
   const [selectedTab, setSelectedTab] = useState("experience");
 
   return (
-    <div className="grid grid-cols-3 gap-8 w-full">
+    <div className="grid grid-cols-1 custom-md:grid-cols-3 gap-4 w-full">
       {/* First Column */}
       <div className="col-span-1 p-4">
         <h1 className="font-semibold text-4xl mb-6">Why hire me?</h1>
@@ -32,12 +32,13 @@ function Resume() {
           systems.
         </p>
         <div>
-          {tabItems.map((item) => (
-            <div key={item.value} className="flex flex-col">
+          <div className="flex flex-row custom-md:flex-col gap-4">
+            {tabItems.map((item) => (
               <Button
+                key={item.value}
                 onClick={() => setSelectedTab(item.value)}
                 variant="secondary"
-                className={`mt-4 text-base ${
+                className={`text-base ${
                   selectedTab === item.value
                     ? "bg-[#fe0f5d] text-white"
                     : "bg-gray-800 text-white"
@@ -45,13 +46,18 @@ function Resume() {
               >
                 {item.label}
               </Button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
+      {/* Divider for small screens */}
+      <div className="block custom-md:hidden px-4">
+        <hr className="border-t border-gray-600 my-2" />
+      </div>
+
       {/* Second Column */}
-      <div className="col-span-2 p-4">
+      <div className="col-span-1 custom-md:col-span-2 p-4">
         <AnimatePresence mode="wait">
           {selectedTab === "experience" && (
             <motion.div key="experience" variants={tabVariants} initial="hidden" animate="visible" exit="exit">

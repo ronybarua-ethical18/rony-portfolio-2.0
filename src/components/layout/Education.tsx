@@ -29,7 +29,7 @@ function Education() {
         Web Developer, highlighting my growth, skills, and commitment to
         delivering quality web applications.
       </p>
-      <div className="mt-10 flex space-x-4">
+      <div className="mt-10 flex flex-col custom-xl:flex-row space-y-4 custom-xl:space-y-0 custom-xl:space-x-4">
         {educations.map((item) => (
           <div
             className="p-8 rounded-md shadow-sm border border-gray-400 w-full cursor-default hover:bg-white/5 hover:backdrop-blur-lg transition-all duration-300 ease-in-out hover:duration-300 hover:ease-in-out
