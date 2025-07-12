@@ -9,14 +9,6 @@ interface ContactInfoProps {
   link?: string;
 }
 
-interface ContactData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  message: string;
-}
-
 const ContactInfo: React.FC<ContactInfoProps> = ({
   icon: Icon,
   title,
