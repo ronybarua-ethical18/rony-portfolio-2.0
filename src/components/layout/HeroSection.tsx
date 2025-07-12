@@ -68,18 +68,20 @@ function HeroSection() {
             Backend-Focused Full-Stack Engineer with Over 3 Years of Experience
           </h3>
           <p className="text-gray-300 leading-relaxed text-lg sixteen-hundred:text-base">
-            I'm an experienced Full Stack JavaScript Developer with a strong
+            I&apos;m an experienced Full Stack JavaScript Developer with a strong
             background in both frontend and backend development, specializing in
             creating high-performance, scalable applications. 
           </p>
           <div className="flex space-x-6 items-center mt-8">
-            <Button
-              variant="outline"
-              className="bg-transparent rounded-xl border-[#fe0f5d] text-white flex items-center gap-2 hover:bg-[#fe0f5d] hover:text-white"
-            >
-              <FaDownload className="text-[#fe0f5d]" />
-              Download CV
-            </Button>
+            <a href="/resume.pdf" download>
+              <Button
+                variant="outline"
+                className="bg-transparent rounded-xl border-[#fe0f5d] text-white flex items-center gap-2 hover:bg-[#fe0f5d] hover:text-white"
+              >
+                <FaDownload className="text-[#fe0f5d]" />
+                Download Resume
+              </Button>
+            </a>
             <SocialIcons />
           </div>
         </div>

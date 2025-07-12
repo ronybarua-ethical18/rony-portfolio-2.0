@@ -65,47 +65,31 @@ const Contact: React.FC = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12  w-[80%] m-auto sixteen-hundred:w-[90%]">
       <div className="w-full shadow-md hover:bg-[#08082d] bg-white/5 transition-all duration-300 ease-linear backdrop-blur-xl rounded-xl p-8 border border-gray-600">
         <h1 className="text-4xl text-white font-semibold">
-          Let's work together
+          Let&apos;s work together
         </h1>
         <p className="text-gray-500 mt-4">
-          Have a project in mind? Let's create something amazing together!
+          Have a project in mind? Let&apos;s create something amazing together!
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Input
               type="text"
               name="firstName"
-              placeholder="First name"
+              placeholder="Your name"
               className="bg-gray-600 border-none h-12"
             />
-            <Input
-              type="text"
-              name="lastName"
-              placeholder="Last name"
-              className="bg-gray-600 border-none h-12"
-            />
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <Input
               type="email"
               name="email"
               placeholder="Email address"
-              className="bg-gray-600 border-none h-12"
+              className="bg-gray-600 border-none h-12 my-8"
             />
-            <Input
-              type="tel"
-              name="phone"
-              placeholder="Phone"
-              className="bg-gray-600 border-none h-12"
-            />
-          </div>
 
           <Textarea
             name="message"
             rows={8}
-            className="mt-8 bg-gray-600 border-none sixteen-hundred:h-28"
+            className=" bg-gray-600 border-none sixteen-hundred:h-28"
             placeholder="Type your message here..."
           />
 

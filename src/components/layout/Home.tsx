@@ -10,7 +10,7 @@ import { SpotlightNewDemo } from "../ui/spotlight";
 import Contact from "./Contact";
 // import { AnimatedTestimonialsDemo } from "./Work";
 import { Button } from "../ui/button";
-import { StickyScrollRevealDemo } from "./Work";
+import { Work } from "./Work";
 import { GlowingEffect } from "../ui/glowing-effect";
 
 // Type definitions
@@ -118,7 +118,7 @@ export default function Home() {
             ))}
           </TabsList>
 
-          <div className="min-h-[calc(100vh-212px)] flex justify-center mt-28 sixteen-hundred:mt-20 custom-md:mt-14">
+          <div className="min-h-[calc(100vh-212px)] flex justify-center mt-28 sixteen-hundred:mt-20">
             <TabsContent value="home" className="text-left w-full m-0">
               {selectedTab === "home" && (
                 <AnimatePresence mode="wait">
@@ -143,7 +143,7 @@ export default function Home() {
               {selectedTab === "work" && (
                 <AnimatePresence mode="wait">
                   <AnimatedContent>
-                    <StickyScrollRevealDemo />
+                    <Work />
                   </AnimatedContent>
                 </AnimatePresence>
               )}
@@ -168,7 +168,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="absolute top-0 right-0 custom-md:block hidden"
       >
-        <Button variant="secondary" className="hover:bg-gray-700/50">
+        <Button variant="secondary" className="hover:bg-[#fe0f5d] hover:text-white text-black" onClick={() => setSelectedTab('contact')}>
           Hire me
         </Button>
       </motion.div>
