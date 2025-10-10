@@ -1,39 +1,98 @@
 import React from "react";
 
-export const techStack = [
-  "Next.js",
-  "React",
-  "Tailwind CSS",
-  "TypeScript",
-  "Framer Motion",
-  "MongoDB",
-  "Node.js",
-];
+// Define the tech stack keys as a type
+type TechStackKey = 'stylevibe' | 'aiJobBoard' | 'aiKnowledgeHub';
 
-export const content = [
+// Directory pattern for tech stacks
+export const techStacks: Record<TechStackKey, string[]> = {
+  stylevibe: [
+    "Next.js",
+    "Redux",
+    "RTK Query",
+    "antd",
+    "Express JS",
+    "MongoDB",
+    "Stripe",
+    "Socket.io",
+    "Redis",
+    "Docker",
+    "Github Actions",
+    "TypeScript",
+  ],
+  aiJobBoard: [
+    "Next.js",
+    "NestJS",
+    "PostgreSQL",
+    "Prisma ORM",
+    "LangChain",
+    "OpenAI API",
+    "Pinecone (Vector DB)",
+    "Redis",
+    "Docker",
+    "GitHub Actions",
+  ],
+  aiKnowledgeHub: [
+    "Next.js",
+    "NestJS",
+    "MongoDB",
+    "Redis",
+    "LangChain",
+    "OpenAI API",
+    "Pinecone (Vector DB)",
+    "BullMQ / Trigger.dev",
+    "WebSockets / SSE"
+  ],
+};
+
+export const content: Array<{
+  title: string | React.ReactNode;
+  description: React.ReactNode;
+  githubUrl: string;
+  demoUrl: string;
+  techStackKey: TechStackKey;
+}> = [
   {
-    title: "StyleVibe - A Full Stack Application",
+    title: "StyleVibe - Beauty Service Booking App",
     description: (
-        <p className="text-lg text-gray-600">
-          A Full-Stack Platform Transforming Salon Operations | Smart Booking •
-          Staff Scheduling • Business Intelligence.
-        </p>
+      <p className="text-base text-gray-300">
+        Connects customers with salons and makeup artists for easy appointment
+        booking, service management, and secure payments.
+      </p>
     ),
-    githubUrl: "https://github.com/ronybarua-ethical18/stylevibe-frontend",
-    demoUrl: "https://rony-portfolio-20.vercel.app/",
+    githubUrl: "https://github.com/ronybarua-ethical18/stylevibe",
+    demoUrl: "https://stylevibe-app.vercel.app/",
+    techStackKey: "stylevibe",
   },
   {
-    title: "AI Powered Job Board Portal",
-    description: (
-      <div className="w-full">
-        <p className="text-lg text-gray-600">
-          Developed ZenithMinds, an educational platform connecting students and
-          instructors, fostering global collaboration.
-        </p>
-        
-      </div>
+    title: (
+      <span>
+        AI Job Board Portal - <span className="border border-[#fe0f5d] text-white px-2 py-1 rounded-md text-sm font-bold">In Development</span>
+      </span>
     ),
-    githubUrl: "https://github.com/ronybarua-ethical18/stylevibe-frontend",
-    demoUrl: "https://rony-portfolio-20.vercel.app/",
+    description: (
+      <p className="text-base text-gray-300">
+        AI-powered platform that matches candidates with relevant jobs using
+        real-time skill analysis and smart recommendations.
+      </p>
+    ),
+    githubUrl: "https://github.com/ronybarua-ethical18/ai-powered-job-board",
+    demoUrl: "/",
+    techStackKey: "aiJobBoard",
+  },
+  {
+    title: (
+      <span>
+        AI Knowledge Hub - <span className="border border-[#fe0f5d] text-white px-2 py-1 rounded-md text-sm font-bold">In Development</span>
+      </span>
+    ),
+    description: (
+      <p className="text-base text-gray-300">
+        Search, explore, and interact with knowledge using AI. Features
+        summarization, intelligent answers, and context-aware insights.
+      </p>
+    ),
+    githubUrl: "https://github.com/ronybarua-ethical18/ai-knowledge-hub",
+    demoUrl: "/",
+    techStackKey: "aiKnowledgeHub",
   },
 ];

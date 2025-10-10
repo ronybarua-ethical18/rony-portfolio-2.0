@@ -73,7 +73,7 @@ function HeroSection() {
             creating high-performance, scalable applications. 
           </p>
           <div className="flex space-x-6 items-center mt-8">
-            <a href="/resume.pdf" download>
+            <a href="/RonyBarua.pdf" download>
               <Button
                 variant="outline"
                 className="bg-transparent rounded-xl border-[#fe0f5d] text-white flex items-center gap-2 hover:bg-[#fe0f5d] hover:text-white"

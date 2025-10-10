@@ -6,7 +6,7 @@ import { GlowingEffect } from "../ui/glowing-effect";
 interface ProjectCardProps {
   image: StaticImageData;
   techStack: string[];
-  title: string;
+  title: React.ReactNode;
   description: React.ReactNode;
   githubUrl?: string;
   demoUrl?: string;
@@ -20,7 +20,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   githubUrl,
   demoUrl,
 }) => (
-  <div className="
+  <div
+    className="
     bg-gradient-to-br from-[#1a1a2e]/80 via-[#16213e]/70 to-[#0f3460]/80
     backdrop-blur-lg
     border border-white/10
@@ -31,18 +32,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     transition
     duration-300
     hover:cursor-default
-  ">
+  "
+  >
     <GlowingEffect
-              blur={0}
-              borderWidth={3}
-              spread={80}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-            />
+      blur={0}
+      borderWidth={3}
+      spread={80}
+      glow={true}
+      disabled={false}
+      proximity={64}
+      inactiveZone={0.01}
+    />
     <div className="rounded-xl overflow-hidden mb-4">
-      <Image src={image} alt={title} className="w-full object-cover" />
+      <Image src={image} alt="Project image" className="w-full object-cover" />
     </div>
     <div className="flex flex-wrap gap-2 mb-4">
       {techStack.map((tech, idx) => (
