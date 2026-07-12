@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import HeroSection from "./HeroSection";
@@ -23,7 +23,7 @@ const tabItems: TabItem[] = [
   { value: "contact", label: "Contact" },
 ];
 
-const pageVariants = {
+const pageVariants: Variants = {
   initial: { opacity: 0, y: 16 },
   animate: {
     opacity: 1,
