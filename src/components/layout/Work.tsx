@@ -4,18 +4,19 @@ import { content, techStacks } from "./WorkData";
 import ProjectCard from "./ProjectCard";
 import StyleVibeImg from "../../../public/stylevibe.png";
 import JobBoardImg from "../../../public/job-board.png";
-import KnowledgeHubImg from "../../../public/ai-hub.jpg";
+import KnowledgeHubImg from "../../../public/ai-knowledge-hub.png";
 
 const images = [StyleVibeImg, JobBoardImg, KnowledgeHubImg];
 
 export function Work() {
   return (
-    <>
-      <h2 className="text-2xl font-semibold">My Works</h2>
-      <p className="text-gray-400 mt-2">
-        Showcasing my featured full stack web projects and technical skills.
+    <div>
+      <span className="p-eyebrow">{"// selected work"}</span>
+      <h2 className="p-heading mt-4 text-[clamp(28px,3.4vw,38px)]">My Works</h2>
+      <p className="mt-2 max-w-[60ch] leading-relaxed text-[var(--p-muted)]">
+        Featured full-stack projects — the systems, not just the screens.
       </p>
-      <div className="flex flex-col custom-md:flex-row gap-8 mt-8">
+      <div className="mt-8 grid gap-[22px] md:grid-cols-3">
         {content.map((item, idx) => (
           <ProjectCard
             key={item.techStackKey}
@@ -25,9 +26,11 @@ export function Work() {
             description={item.description}
             githubUrl={item.githubUrl}
             demoUrl={item.demoUrl}
+            status={item.status}
+            statusLabel={item.statusLabel}
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }

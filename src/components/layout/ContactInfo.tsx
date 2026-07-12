@@ -15,23 +15,25 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
   content,
   link,
 }) => (
-  <div className="flex space-x-6 mb-10">
-    <div className="bg-white/5 backdrop-blur-lg flex items-center justify-center w-16 h-16 rounded-lg">
-      <Icon className="text-[#fe0f5d] text-base" />
+  <div className="flex items-center gap-4 rounded-[13px] p-3 transition-colors hover:bg-[var(--p-elevate)]">
+    <div className="p-icon-chip flex-none">
+      <Icon className="h-[18px] w-[18px]" />
     </div>
-    <div>
-      <h2 className="text-gray-500">{title}</h2>
+    <div className="min-w-0">
+      <div className="font-mono text-[10.5px] uppercase tracking-wider text-[var(--p-muted)]">
+        {title}
+      </div>
       {link ? (
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-[#fe0f5d] transition-colors"
+          className="break-words text-[14.5px] text-[var(--p-ink)] transition-colors hover:text-[var(--p-accent)]"
         >
           {content}
         </a>
       ) : (
-        <p>{content}</p>
+        <p className="break-words text-[14.5px] text-[var(--p-ink)]">{content}</p>
       )}
     </div>
   </div>

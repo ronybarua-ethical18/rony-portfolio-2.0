@@ -22,6 +22,7 @@ module.exports = {
   			'custom-sm': {'min': '650px'},
   			'custom-xl': {'min': '1250px'},
   			'super-sm': {'max': '549px'}, // 👈 Add this line
+  			'nav-max': {'max': '900px'},
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -71,6 +72,10 @@ module.exports = {
   			}
   		},  animation: {
 			spotlight: "spotlight 2s ease .75s 1 forwards",
+			"spin-slow": "spin 30s linear infinite",
+			"spin-rev": "spin 18s linear infinite reverse",
+			"pulse-dot": "pulse-dot 1.7s cubic-bezier(0.2,0.7,0.2,1) infinite",
+			"rise": "rise 0.5s cubic-bezier(0.2,0.7,0.2,1)",
 		  },
 		  keyframes: {
 			spotlight: {
@@ -82,6 +87,14 @@ module.exports = {
 				opacity: 1,
 				transform: "translate(-50%,-40%) scale(1)",
 			  },
+			},
+			"pulse-dot": {
+			  "0%,100%": { transform: "scale(1)", opacity: "1" },
+			  "50%": { transform: "scale(1.4)", opacity: "0.6" },
+			},
+			"rise": {
+			  from: { opacity: "0", transform: "translateY(16px)" },
+			  to: { opacity: "1", transform: "none" },
 			},
 		  },
   	}
