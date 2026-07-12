@@ -3,44 +3,30 @@ import React from "react";
 
 function Skills() {
   return (
-    <div className="rounded-lg">
-    
-      <div className="h-[500px] overflow-y-scroll rounded-lg">
-      <h2 className="text-2xl font-semibold mt-0">My Skills</h2>
-      <p className="text-gray-400 mt-4 mb-6">
-        Showcasing key milestones and achievements in my career as a Full Stack
-        Web Developer, highlighting my growth, skills, and commitment to
-        delivering quality web applications.
+    <div>
+      <h3 className="p-heading text-2xl">My Skills</h3>
+      <p className="mt-2 max-w-[60ch] leading-relaxed text-[var(--p-muted)]">
+        The languages, frameworks, and tools I reach for across the stack.
       </p>
-        {skills.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="mb-6">
-            <h2 className="text-lg font-semibold mb-4 text-gray-300 border-b border-gray-600 pb-2">
+
+      <div className="mt-6 lg:max-h-[340px] lg:overflow-y-auto lg:pr-1">
+        {skills.map((category) => (
+          <div key={category.title} className="mb-6 last:mb-0">
+            <h5 className="mb-3.5 flex items-center gap-2 border-b border-[var(--p-line-soft)] pb-2.5 font-mono text-[11.5px] uppercase tracking-wider text-[var(--p-muted)]">
               {category.title}
-            </h2>
-            <div className="grid grid-cols-3 custom-lg:grid-cols-4 super-sm:grid-cols-2 gap-4">
+              <span className="ml-auto text-[var(--p-muted-2)]">
+                {String(category.skillSet.length).padStart(2, "0")}
+              </span>
+            </h5>
+            <div className="flex flex-wrap gap-2.5">
               {category.skillSet.map((skill) => (
-                <div
+                <span
                   key={skill.id}
-                  className="bg-gray-800 text-white p-4 rounded-lg shadow-md flex items-center gap-3 
-                    transition duration-300 ease-in-out 
-                    group 
-                    hover:bg-white hover:text-black 
-                    cursor-default"
+                  className="p-chip inline-flex items-center gap-2"
                 >
-                  <skill.icon
-                    className="w-6 h-6 
-                      text-white 
-                      group-hover:text-black 
-                      transition duration-300 ease-in-out "
-                  />
-                  <span
-                    className="
-                      transition duration-300 ease-in-out 
-                      group-hover:text-black"
-                  >
-                    {skill.name}
-                  </span>
-                </div>
+                  <skill.icon className="h-4 w-4" />
+                  {skill.name}
+                </span>
               ))}
             </div>
           </div>

@@ -1,56 +1,49 @@
 import React from "react";
+import { GraduationCap } from "lucide-react";
+import Brackets from "./Brackets";
 
-import { PiGraduationCapFill } from "react-icons/pi";
-import { GlowingEffect } from "../ui/glowing-effect";
+const educations = [
+  {
+    id: 1,
+    title: "B.Sc in Engineering",
+    major: "Computer Science and Engineering",
+    duration: "2015 — 2018",
+    institute: "Port City International University",
+  },
+  {
+    id: 2,
+    title: "Diploma in Engineering",
+    major: "Computer Engineering",
+    duration: "2011 — 2015",
+    institute: "Cox's Bazar Polytechnic Institute",
+  },
+];
 
 function Education() {
-  const educations = [
-    {
-      id: 1,
-      title: "B.Sc in Engineering",
-      major: "Computer Science and Engineering",
-      duration: "2015 - 2018",
-      institute: "Port City International University",
-    },
-    {
-      id: 2,
-      title: "Diploma in Engineering",
-      major: "Computer Engineering",
-      duration: "2011 - 2015",
-      institute: "Cox's Bazar Polytechnic Institute",
-    },
-  ];
   return (
     <div>
-      {" "}
-      <h2 className="text-2xl font-semibold">Education</h2>
-      <p className="text-gray-400 mt-2">
-        Showcasing key milestones and achievements in my career as a Full Stack
-        Web Developer, highlighting my growth, skills, and commitment to
-        delivering quality web applications.
+      <h3 className="p-heading text-2xl">Education</h3>
+      <p className="mt-2 max-w-[60ch] leading-relaxed text-[var(--p-muted)]">
+        Where I built my engineering foundations — the academic milestones behind
+        my growth as a Full-Stack Web Developer.
       </p>
-      <div className="mt-10 flex flex-col custom-xl:flex-row space-y-4 custom-xl:space-y-0 custom-xl:space-x-4">
+      <div className="mt-7 grid gap-[18px] sm:grid-cols-2">
         {educations.map((item) => (
-          <div
-            className="p-8 rounded-md shadow-sm border border-gray-400 w-full cursor-default hover:bg-white/5 hover:backdrop-blur-lg transition-all duration-300 ease-in-out hover:duration-300 hover:ease-in-out
-            relative"
-            key={item.id}
-          >
-            <GlowingEffect
-              blur={0}
-              borderWidth={3}
-              spread={80}
-              glow={true}
-              disabled={false}
-              proximity={64}
-              inactiveZone={0.01}
-            />
-            <PiGraduationCapFill className="mb-2 text-xl" />
-
-            <h2 className="font-medium text-[#fe0f5d]">{item.duration}</h2>
-            <h1 className="font-medium text-lg mt-4">{item.title}</h1>
-            <p className="text-gray-500">{item.major}</p>
-            <li className=" mt-6 ">{item.institute}</li>
+          <div key={item.id} className="p-card p-7">
+            <Brackets />
+            <div className="p-icon-chip">
+              <GraduationCap size={18} />
+            </div>
+            <div className="mt-4 font-mono text-[11.5px] tracking-wide text-[var(--p-accent)]">
+              {item.duration}
+            </div>
+            <h4 className="mt-1.5 text-[19px] font-bold tracking-tight text-[var(--p-ink)]">
+              {item.title}
+            </h4>
+            <div className="text-[14.5px] text-[var(--p-muted)]">{item.major}</div>
+            <div className="mt-5 border-t border-[var(--p-line-soft)] pt-4 font-mono text-[12px] text-[var(--p-muted)]">
+              {item.institute}
+            </div>
           </div>
         ))}
       </div>
