@@ -13,6 +13,12 @@ const tabItems = [
   { value: "education", label: "Education", Icon: GraduationCap },
 ];
 
+const panels = [
+  { value: "experience", Node: JobExperience },
+  { value: "skills", Node: Skills },
+  { value: "education", Node: Education },
+];
+
 function Resume() {
   const [selectedTab, setSelectedTab] = useState("experience");
 
@@ -51,23 +57,28 @@ function Resume() {
         </div>
       </div>
 
-      {/* ---- panel (stable min-height so the sidebar never shifts) ---- */}
-      <div className="lg:min-h-[440px]">
-        {selectedTab === "experience" && (
-          <div className="animate-rise">
-            <JobExperience />
-          </div>
-        )}
-        {selectedTab === "skills" && (
-          <div className="animate-rise">
-            <Skills />
-          </div>
-        )}
-        {selectedTab === "education" && (
-          <div className="animate-rise">
-            <Education />
-          </div>
-        )}
+      {/* ---- panel: on desktop every section is stacked in the same grid cell,
+             so the column is always as tall as the tallest section and its
+             height never changes when switching sub-tabs — the sidebar stays
+             fixed. On mobile only the active section renders (normal flow). ---- */}
+      <div className="lg:grid">
+        {panels.map(({ value, Node }) => {
+          const active = selectedTab === value;
+          return (
+            <div
+              key={value}
+              aria-hidden={!active}
+              className={cn(
+                "transition-opacity duration-300 lg:col-start-1 lg:row-start-1",
+                active
+                  ? "block lg:visible lg:opacity-100"
+                  : "hidden lg:block lg:invisible lg:opacity-0 lg:pointer-events-none"
+              )}
+            >
+              <Node />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
