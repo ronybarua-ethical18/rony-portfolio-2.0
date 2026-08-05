@@ -24,7 +24,7 @@ const statusStyles: Record<
   live: { color: "var(--p-live)", dot: "var(--p-live)", pulse: true },
 };
 
-const MAX_TAGS = 5;
+const MAX_TAGS = 7;
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   image,

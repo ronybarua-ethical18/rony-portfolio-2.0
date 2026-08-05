@@ -6,17 +6,14 @@ export type ProjectStatus = "shipped" | "dev" | "live";
 export const techStacks: Record<TechStackKey, string[]> = {
   stylevibe: [
     "Next.js",
-    "Redux",
-    "RTK Query",
-    "antd",
-    "Express JS",
-    "MongoDB",
     "Stripe",
     "Socket.io",
     "Redis",
     "Docker",
-    "Github Actions",
+    "Node.js / Express",
     "TypeScript",
+    "Redux (RTK Query)",
+    "MongoDB",
   ],
   aiJobBoard: [
     "Next.js",
