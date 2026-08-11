@@ -1,5 +1,5 @@
 // Tech stack keys
-type TechStackKey = "stylevibe" | "aiJobBoard" | "aiKnowledgeHub";
+type TechStackKey = "stylevibe" | "nlDatabaseAgent" | "aiKnowledgeHub";
 
 export type ProjectStatus = "shipped" | "dev" | "live";
 
@@ -15,17 +15,12 @@ export const techStacks: Record<TechStackKey, string[]> = {
     "Redux (RTK Query)",
     "MongoDB",
   ],
-  aiJobBoard: [
+  nlDatabaseAgent: [
     "Next.js",
-    "NestJS",
+    "TypeScript",
     "PostgreSQL",
-    "Prisma ORM",
-    "LangChain",
-    "OpenAI API",
-    "Pinecone (Vector DB)",
-    "Redis",
-    "Docker",
-    "GitHub Actions",
+    "Gemini API",
+    "Recharts",
   ],
   aiKnowledgeHub: [
     "Next.js",
@@ -60,14 +55,14 @@ export const content: Array<{
     statusLabel: "Shipped",
   },
   {
-    title: "AI Job Board Portal",
+    title: "Natural Language Database Agent",
     description:
-      "AI-powered platform that matches candidates with relevant jobs using real-time skill analysis and smart recommendations.",
-    githubUrl: "https://github.com/ronybarua-ethical18/ai-powered-job-board",
-    demoUrl: "",
-    techStackKey: "aiJobBoard",
-    status: "dev",
-    statusLabel: "In Development",
+      "Turns plain-English questions into read-only SQL on Postgres, self-corrects failed queries, and answers with an explanation, table, and chart.",
+    githubUrl: "https://github.com/ronybarua-ethical18/nl-database-agent",
+    demoUrl: "https://nl-database-agent.vercel.app/",
+    techStackKey: "nlDatabaseAgent",
+    status: "live",
+    statusLabel: "Live",
   },
   {
     title: "AI Knowledge Hub",

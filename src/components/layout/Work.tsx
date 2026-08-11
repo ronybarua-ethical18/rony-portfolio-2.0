@@ -3,10 +3,10 @@ import React from "react";
 import { content, techStacks } from "./WorkData";
 import ProjectCard from "./ProjectCard";
 import StyleVibeImg from "../../../public/stylevibe.png";
-import JobBoardImg from "../../../public/job-board.png";
+import NlDbAgentImg from "../../../public/nl-db-agent.png";
 import KnowledgeHubImg from "../../../public/ai-knowledge-hub.png";
 
-const images = [StyleVibeImg, JobBoardImg, KnowledgeHubImg];
+const images = [StyleVibeImg, NlDbAgentImg, KnowledgeHubImg];
 
 export function Work() {
   return (
