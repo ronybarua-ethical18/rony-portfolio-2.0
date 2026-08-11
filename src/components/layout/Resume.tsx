@@ -31,7 +31,7 @@ function Resume() {
           Why hire me?
         </h2>
         <p className="mt-3.5 max-w-[46ch] leading-relaxed text-[var(--p-muted)]">
-          Full-Stack Web Developer with 3+ years building scalable apps in React,
+          Full-Stack Web Developer with 4+ years building scalable apps in React,
           Node.js &amp; MongoDB. I specialize in clean code, seamless UX, and
           efficient back-end systems.
         </p>

@@ -16,10 +16,10 @@ const socialLinks = [
 ];
 
 const statsData = [
-  { end: 3, label: "Years of experience" },
+  { end: 4, label: "Years of experience" },
   { end: 12, label: "Projects completed" },
   { end: 32, label: "Technologies mastered" },
-  { end: 2, label: "Full-stack projects led" },
+  { end: 4, label: "Full-stack projects led" },
 ];
 
 function HeroSection() {
@@ -35,7 +35,7 @@ function HeroSection() {
           <h3 className="mt-5 max-w-[34ch] text-[clamp(18px,2vw,23px)] font-medium leading-[1.4] tracking-tight text-[var(--p-muted)]">
             Backend-focused{" "}
             <b className="font-bold text-[var(--p-ink)]">Full-Stack Engineer</b> —
-            building high-performance, scalable systems for 3+ years.
+            building high-performance, scalable systems for 4+ years.
           </h3>
           <p className="mt-5 max-w-[52ch] leading-relaxed text-[var(--p-muted)]">
             I architect and ship production JavaScript applications end to end —
